@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('yum-utils') {
             steps {
-                sh "yum install yum-utils -y"
+                sh "pwd"
+                sh "sudo yum install yum-utils -y"
             }
         }
         stage('Install Docker') {
