@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('yum-utils') {
             steps {
-                sh "pwd"
                 sh "sudo yum install yum-utils -y"
             }
         }
@@ -22,6 +21,13 @@ pipeline {
                 sh "sudo service docker start"
                 echo "Enabling Docker service at run time"
                 sh "sudo systemctl enable docker"
+            }
+        }
+        stage('Docker Build') {
+            steps {
+                echo "Running a Docker container using Dockerfile"
+                sh "sudo docker build -t casestudy:web2.0"
+                sh "sudo docker run -itd -p 90:80 casestudy:web2.0"
             }
         }
     }
