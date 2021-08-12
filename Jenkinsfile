@@ -19,7 +19,7 @@ pipeline {
         stage('Start and Enable') {
             steps {
                 echo "starting Docker service"
-                sh "sudo serivce docker start"
+                sh "sudo service docker start"
                 echo "Enabling Docker service at run time"
                 sh "sudo systemctl enable docker"
             }
