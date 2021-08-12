@@ -11,7 +11,7 @@ pipeline {
         stage('Install Docker') {
             steps {
                 sh "sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
-                sh "sudo yum install docker-ce docker-ce-cli containerd.io –y"
+                sh "sudo yum install docker-ce docker-ce-cli containerd.io --nobest –y"
                 echo "Installed Docker version"
                 sh "docker --version"
             }
