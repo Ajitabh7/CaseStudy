@@ -1,1 +1,1 @@
-CaseStudy
+caseStudy
